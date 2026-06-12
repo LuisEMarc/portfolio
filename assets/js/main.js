@@ -8,6 +8,7 @@ async function init() {
   initActiveNavigation();
   initNavigationModal();
   initTheme();
+  initThemeToggle();
 }
 
 // ======================
@@ -18,26 +19,38 @@ const THEME_KEY = "portfolio-theme";
 
 function getAutomaticTheme() {
   const hour = new Date().getHours();
-
   return hour >= 9 && hour < 19 ? "light" : "dark";
 }
 
 function applyTheme(theme) {
-  document.body.classList.toggle("light-mode", theme === "light");
+  document.body.classList.remove("light-mode", "dark-mode");
+  document.body.classList.add(`${theme}-mode`);
+  updateThemeIcon(theme);
+}
 
-  document.body.classList.toggle("dark-mode", theme === "dark");
+function updateThemeIcon(theme) {
+  const icon = document.getElementById("themeIcon");
+  if (!icon) return;
+  icon.className =
+    theme === "dark" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
 }
 
 function initTheme() {
   const savedTheme = localStorage.getItem(THEME_KEY);
+  const theme = savedTheme || getAutomaticTheme();
+  applyTheme(theme);
+}
 
-  if (savedTheme) {
-    applyTheme(savedTheme);
-
-    return;
-  }
-
-  applyTheme(getAutomaticTheme());
+function initThemeToggle() {
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isDark = document.body.classList.contains("dark-mode");
+    const newTheme = isDark ? "light" : "dark";
+    applyTheme(newTheme);
+    localStorage.setItem(THEME_KEY, newTheme);
+  });
 }
 
 // ======================
