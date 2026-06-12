@@ -7,11 +7,38 @@ document.addEventListener("DOMContentLoaded", init);
 async function init() {
   initActiveNavigation();
   initNavigationModal();
+  initTheme();
 }
 
 // ======================
 // THEME
 // ======================
+
+const THEME_KEY = "portfolio-theme";
+
+function getAutomaticTheme() {
+  const hour = new Date().getHours();
+
+  return hour >= 9 && hour < 19 ? "light" : "dark";
+}
+
+function applyTheme(theme) {
+  document.body.classList.toggle("light-mode", theme === "light");
+
+  document.body.classList.toggle("dark-mode", theme === "dark");
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+
+    return;
+  }
+
+  applyTheme(getAutomaticTheme());
+}
 
 // ======================
 // ACTIVE NAVIGATION
