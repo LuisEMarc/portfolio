@@ -58,15 +58,31 @@ function initActiveNavigation() {
 
 function initNavigationModal() {
   const navToggle = document.getElementById("navToggle");
-
   const modalElement = document.getElementById("navigationModal");
 
   if (!navToggle || !modalElement) return;
 
+  const icon = navToggle.querySelector("i");
   const navigationModal = new bootstrap.Modal(modalElement);
 
   navToggle.addEventListener("click", () => {
-    navigationModal.show();
+    const isOpen = modalElement.classList.contains("show");
+
+    if (isOpen) {
+      navigationModal.hide();
+    } else {
+      navigationModal.show();
+    }
+  });
+
+  modalElement.addEventListener("shown.bs.modal", () => {
+    icon.className = "bi bi-x-lg";
+    navToggle.classList.add("active");
+  });
+
+  modalElement.addEventListener("hidden.bs.modal", () => {
+    icon.className = "bi bi-list";
+    navToggle.classList.remove("active");
   });
 
   document.querySelectorAll(".modal-nav-link").forEach((link) => {
