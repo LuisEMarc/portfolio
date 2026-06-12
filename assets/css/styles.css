@@ -69,9 +69,21 @@ h2,
   background-clip: text;
 }
 
+.hero-glass {
+  text-align: center;
+}
+
 /* ==========
     HERO BADGES 
 ========== */
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
 
 .hero-badges span {
   padding: 8px 14px;
@@ -84,9 +96,43 @@ h2,
 .profile-image {
   width: 200px;
   height: 200px;
+  display: block;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.25);
+  margin: 0 auto 24px;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.social-links i {
+  font-size: 2rem;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ==========
@@ -105,6 +151,7 @@ h2,
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
+  width: 100%;
 }
 
 .about-item i {
@@ -275,6 +322,160 @@ h2,
 }
 
 /* ==========
+    PROJECTS 
+========== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project-card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-image {
+  display: block;
+  width: 85%;
+  max-width: 500px;
+  margin: 20px auto 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.project-tags span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.project-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  background: var(--accent-color);
+  transition: 0.25s;
+}
+
+.project-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========
+  EXPERIENCE
+========== */
+
+.timeline {
+  position: relative;
+  margin-top: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.5);
+}
+
+.timeline-content {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.experience-period {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.experience-role {
+  margin-top: 8px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.experience-list {
+  margin-top: 16px;
+  padding-left: 18px;
+}
+
+.experience-list li {
+  margin-bottom: 10px;
+}
+
+.impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(10, 132, 255, 0.15);
+  color: var(--accent-color);
+  font-weight: 600;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* ==========
     FOOTER
 ========== */
 
@@ -313,6 +514,12 @@ h2,
   gap: 16px;
 }
 
+.footer-description {
+  max-width: 600px;
+  margin: 16px auto;
+  opacity: 0.8;
+}
+
 .footer-content h3 {
   margin: 0;
   font-size: 1.2rem;
@@ -326,39 +533,49 @@ h2,
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
-  color: inherit;
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: 0.25s ease;
 }
 
 .footer-links a:hover {
-  transform: translateY(-3px);
-  opacity: 0.8;
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.1);
+}
+
+.footer-divider {
+    width: 100px;
+    height: 2px;
+    margin: 32px auto 20px;
+    background: rgba(255,255,255,.15);
 }
 
 .footer-copy {
-  font-size: 0.85rem;
-  opacity: 0.6;
+    margin-bottom: 8px;
+    opacity: .8;
 }
 
-.certifications-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+.footer-tech {
+    font-size: .9rem;
+    opacity: .7;
 }
 
-.cert-badge {
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-}
+/* ==========
+  NAVIGATION BAR
+========== */
 
 .floating-nav {
   position: fixed;
@@ -499,10 +716,17 @@ h2,
     flex-direction: column;
   }
 
+  .hero-badges {
+    max-width: 280px;
+    margin: 16px auto 0;
+  }
+
   .floating-nav {
-    width: auto;
-    padding: 10px 14px;
-    gap: 8px;
+    width: calc(100% - 24px);
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
   }
 
   .nav-link.hide-mobile {
@@ -511,5 +735,43 @@ h2,
 
   .nav-toggle {
     display: flex;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .impact-badge {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    border-radius: 16px;
+    padding: 12px;
   }
 }
