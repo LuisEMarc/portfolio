@@ -9,6 +9,7 @@ async function init() {
   initNavigationModal();
   initTheme();
   initThemeToggle();
+  initCvModal();
 }
 
 // ======================
@@ -125,5 +126,20 @@ function initNavigationModal() {
     link.addEventListener("click", () => {
       navigationModal.hide();
     });
+  });
+}
+
+// ======================
+// CV DOWNLOAD MODAL
+// ======================
+
+function initCvModal() {
+  const button = document.getElementById("cvModalButton");
+  const modalElement = document.getElementById("cvModal");
+  if (!button || !modalElement) return;
+  const cvModal = new bootstrap.Modal(modalElement);
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    cvModal.show();
   });
 }

@@ -103,13 +103,15 @@
             </p>
 
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/lemarc95/">
+                <a href="https://www.linkedin.com/in/lemarc95/" target="_blank" aria-label="LinkedIn">
                     <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="https://github.com/LuisEMarc">
+                <a href="https://github.com/LuisEMarc" target="_blank" aria-label="GitHub">
                     <i class="bi bi-github"></i>
                 </a>
-            </div>
+                <a href="#" class="social-link" id="cvModalButton">
+                    <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                </a>
         </section>
 
         <!-- ABOUT -->
@@ -660,7 +662,31 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- Cv Modal -->
+
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered cv-modal-dialog">
+            <div class="modal-content cv-modal">
+                <div class="cv-modal-header">
+                    <h2 class="glass-title">
+                        <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                        Descargar CV
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="cv-modal-body">
+                    <a href="assets/documents/cv/Luis_Marcos_ES.pdf" download class="cv-option">
+                        Español
+                    </a>
+                    <a href="assets/documents/cv/Luis_Marcos_EN.pdf" download class="cv-option">
+                        English
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Script zone -->
