@@ -181,7 +181,7 @@ const translations = {
     language_badge: "Inglés Intermedio (B1/B2)",
     courses_and_certifications: "Cursos y Certificaciones",
     course_title: "Diplomado en Gestión de la Ciberseguridad",
-    course_place: "National University of Engineering",
+    course_place: "Universidad Nacional de Ingeniería",
     skills: "Habilidades",
     languages_and_technologies: "Lenguajes y Tecnologías",
     database: "Bases de Datos",
@@ -218,6 +218,7 @@ const translations = {
     download_resume: "Descargar CV",
     english: "Inglés",
     spanish: "Español",
+    navigation: "Navegación",
   },
 
   en: {
@@ -248,7 +249,7 @@ const translations = {
     language_badge: "Intermediate English (B1/B2)",
     courses_and_certifications: "Courses and Certifications",
     course_title: "Diploma in cybersecurity management",
-    course_place: "Universidad Nacional de Ingeniería",
+    course_place: "National University of Engineering",
     skills: "Skills",
     languages_and_technologies: "Languages and Technologies",
     database: "Databases",
@@ -284,6 +285,7 @@ const translations = {
     download_resume: "Download Resume",
     english: "English",
     spanish: "Spanish",
+    navigation: "Navigation",
   },
 };
 
