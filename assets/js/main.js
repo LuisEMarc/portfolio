@@ -297,6 +297,7 @@ function changeLanguage(lang) {
       element.textContent = translations[lang][key];
     }
   });
+  updateNavigationTooltips(lang);
 }
 
 const LANGUAGE_KEY = "portfolio-language";
@@ -325,7 +326,7 @@ function initLanguageToggle() {
 function updateLanguageButton(language) {
   const toggle = document.getElementById("languageToggle");
   if (!toggle) return;
-  toggle.dataset.tooltip = language === "es" ? "English" : "Español";
+  toggle.dataset.tooltip = language === "es" ? "Inglés" : "Spanish";
   toggle.innerHTML =
     language === "es"
       ? '<span class="fi fi-us"></span>'
@@ -334,4 +335,62 @@ function updateLanguageButton(language) {
 
 function getBrowserLanguage() {
   return navigator.language.startsWith("es") ? "es" : "en";
+}
+
+function updateNavigationTooltips(lang) {
+  const tooltips = {
+    es: {
+      hero: "Inicio",
+      about: "Sobre mí",
+      education: "Educación",
+      skills: "Habilidades",
+      projects: "Mis proyectos",
+      experience: "Experiancia profesional",
+      contact: "Contacto",
+      theme: "Tema",
+    },
+
+    en: {
+      hero: "Home",
+      about: "About me",
+      education: "Education",
+      skills: "Skills",
+      projects: "My projects",
+      experience: "Professional experience",
+      contact: "Contact",
+      theme: "Theme",
+    },
+  };
+
+  document
+    .querySelector('a[href="#hero"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].hero);
+
+  document
+    .querySelector('a[href="#about"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].about);
+
+  document
+    .querySelector('a[href="#education"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].education);
+
+  document
+    .querySelector('a[href="#skills"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].skills);
+
+  document
+    .querySelector('a[href="#projects"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].projects);
+
+  document
+    .querySelector('a[href="#experience"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].experience);
+
+  document
+    .querySelector('a[href="#contact"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].contact);
+
+  document
+    .querySelector('a[id="themeToggle"]')
+    ?.setAttribute("data-tooltip", tooltips[lang].theme);
 }
