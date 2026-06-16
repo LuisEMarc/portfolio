@@ -787,6 +787,15 @@ body {
 }
 
 /* ==========
+    LANGS 
+========== */
+
+#languageToggle .fi {
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+/* ==========
     MOBILE 
 ========== */
 

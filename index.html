@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.3.2/css/flag-icons.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>Portfolio</title>
@@ -32,7 +33,7 @@
                 <i class="bi bi-person-fill"></i>
             </a>
 
-            <a href="#education" class="nav-link">
+            <a href="#education" class="nav-link hide-mobile">
                 <i class="bi bi-mortarboard-fill"></i>
             </a>
 
@@ -58,6 +59,9 @@
 
             <a href="#" class="nav-link theme-toggle" id="themeToggle">
                 <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </a>
+
+            <a href="#" id="languageToggle" class="nav-link" data-tooltip="English">
             </a>
 
         </nav>
@@ -87,15 +91,15 @@
             </p>
 
 
-            <p class="hero-role">
+            <p class="hero-role" data-i18n="hero_role">
                 Java Backend Developer
             </p>
 
-            <p class="hero-highlight">
+            <p class="hero-highlight" data-i18n="hero_highlight">
                 +5 años desarrollando soluciones empresariales y APIs REST
             </p>
 
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="hero_description">
                 Desarrollador especializado en Java,
                 APIs REST y soluciones empresariales,
                 enfocado en construir software mantenible
@@ -119,22 +123,22 @@
         <section id="about" class="glass-card">
             <h2>
                 <i class="bi bi-person-fill"></i>
-                Sobre m&iacute;
+                <span data-i18n="about_me">Sobre m&iacute;</span>
             </h2>
 
             <div class="about-grid">
                 <div class="about-item">
                     <i class="bi bi-code-slash"></i>
-                    <h3>Desarrollo</h3>
-                    <p>
+                    <h3 data-i18n="developing">Desarrollo</h3>
+                    <p data-i18n="developing_paragraph">
                         Soy desarrollador de software con experiencia
                         en soluciones empresariales y desarrollo de APIs.
                     </p>
                 </div>
                 <div class="about-item">
                     <i class="bi bi-rocket-takeoff-fill"></i>
-                    <h3>Aprendizaje</h3>
-                    <p>
+                    <h3 data-i18n="learning">Aprendizaje</h3>
+                    <p data-i18n="learning_paragraph">
                         He participando en iniciativas que impactan
                         a millones de clientes.
 
@@ -145,8 +149,8 @@
                 </div>
                 <div class="about-item">
                     <i class="bi bi-controller"></i>
-                    <h3>Intereses</h3>
-                    <p>
+                    <h3 data-i18n="interesting">Intereses</h3>
+                    <p data-i18n="interesting_paragraph">
                         Fuera del desarrollo me interesan los videojuegos,
                         la tecnolog&iacute;a, los cubos de Rubik y el entrenamiento f&iacute;sico.
                     </p>
@@ -161,7 +165,7 @@
 
             <h2>
                 <i class="bi bi-mortarboard-fill"></i>
-                Educación
+                <span data-i18n="education">Educación</span>
             </h2>
 
             <div class="education-card">
@@ -172,7 +176,7 @@
 
                 <div>
 
-                    <h3>
+                    <h3 data-i18n="educational_level">
                         Ingeniería en Tecnologías de la Información y Comunicación
                     </h3>
 
@@ -180,33 +184,37 @@
                         2015 - 2019
                     </p>
 
-                    <p>
+                    <p data-i18n="educational_place">
+                        Instituto Tecnológico de Tlalnepantla
+                    </p>
+
+                    <p data-i18n="education_description">
                         Formación enfocada en desarrollo de software,
                         bases de datos, redes y tecnologías de la información.
                     </p>
 
                     <div class="education-tags">
                         <span>Software</span>
-                        <span>Bases de Datos</span>
-                        <span>Redes</span>
-                        <span>TIC</span>
+                        <span data-i18n="education_tag_1">Bases de Datos</span>
+                        <span data-i18n="education_tag_2">Redes</span>
+                        <span data-i18n="education_tag_3">TIC</span>
                     </div>
 
                     <div class="education-languages">
                         <h4>
                             <i class="bi bi-translate"></i>
-                            Idiomas
+                            <span data-i18n="education_languages">Idiomas</span>
                         </h4>
                         <div class="language-badge">
                             <i class="bi bi-globe-americas"></i>
-                            Inglés Intermedio (B1/B2)
+                            <span data-i18n="language_badge">Inglés Intermedio (B1/B2)</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="education-subtitle">
-                <h4>
+                <h4 data-i18n="courses_and_certifications">
                     Cursos y Certificaciones
                 </h4>
             </div>
@@ -218,13 +226,13 @@
                 </div>
 
                 <div>
-                    <h3>
+                    <h3 data-i18n="course_title">
                         Diplomado en Gesti&oacute;n de la Ciberseguridad
                     </h3>
                     <p class="education-period">
                         2019
                     </p>
-                    <p>
+                    <p data-i18n="course_place">
                         Universidad Nacional de Ingenier&iacute;a
                     </p>
                     <p class="education-location">
@@ -258,7 +266,7 @@
 
             <h2>
                 <i class="bi bi-stars"></i>
-                Skills
+                <span data-i18n="skills">Skills</span>
             </h2>
 
             <!-- Lenguajes -->
@@ -267,7 +275,7 @@
 
                 <h3>
                     <i class="bi bi-code-slash"></i>
-                    Lenguajes y Tecnologías
+                    <span data-i18n="languages_and_technologies">Lenguajes y Tecnologías</span>
                 </h3>
 
                 <div class="skills-grid">
@@ -300,7 +308,7 @@
 
                 <h3>
                     <i class="bi bi-database-fill"></i>
-                    Bases de Datos
+                    <span data-i18n="database">Bases de Datos</span>
                 </h3>
 
                 <div class="skills-grid">
@@ -346,7 +354,7 @@
 
                 <h3>
                     <i class="bi bi-tools"></i>
-                    Herramientas
+                    <span data-i18n="tools">Herramientas</span>
                 </h3>
 
                 <div class="skills-grid">
@@ -375,7 +383,7 @@
 
                 <h3>
                     <i class="bi bi-kanban-fill"></i>
-                    Metodologías
+                    <span data-i18n="methodologies">Metodologías</span>
                 </h3>
 
                 <div class="methodology-grid">
@@ -393,7 +401,7 @@
             <div class="skill-category">
                 <h3>
                     <i class="bi bi-rocket-takeoff-fill"></i>
-                    CI/CD y Calidad
+                    <span data-i18n="ci_cd_quality">CI/CD y Calidad</span>
                 </h3>
                 <div class="skills-grid">
                     <div class="skill-item">
@@ -415,7 +423,7 @@
 
             <h2>
                 <i class="bi bi-code-slash"></i>
-                Mis proyectos
+                <span data-i18n="projects">Mis proyectos</span>
             </h2>
 
             <div class="projects-grid">
@@ -428,7 +436,7 @@
                         <h3>
                             Fallout 4 Companion
                         </h3>
-                        <p>
+                        <p data-i18n="project_description_1">
                             Gu&iacute;a interactiva para Fallout 4 con
                             informaci&oacute;n de bobbleheads,
                             compa&ntilde;eros y comandos &uacute;tiles.
@@ -461,7 +469,7 @@
                         <h3>
                             Cat Explorer
                         </h3>
-                        <p>
+                        <p data-i18n="project_description_2">
                             Explorador de razas felinas
                             consumiendo The Cat API con
                             paginaci&oacute;n, modal y modo oscuro.
@@ -493,7 +501,7 @@
 
             <h2>
                 <i class="bi bi-briefcase-fill"></i>
-                Experiencia Profesional
+                <span data-i18n="professional_experience">Experiencia Profesional</span>
             </h2>
 
             <div class="timeline">
@@ -513,19 +521,19 @@
                             Fullstack Developer
                         </p>
                         <ul class="experience-list">
-                            <li>
+                            <li data-i18n="experience_list_1_1">
                                 Lideré el desarrollo de una plataforma para gestión hotelera.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_1_2">
                                 Desarrollo Backend utilizando patrón MVC.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_1_3">
                                 Integración y consumo de APIs.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_1_4">
                                 Desarrollo Frontend con HTML y CSS.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_1_5">
                                 Diseño de bases de datos MySQL y Stored Procedures.
                             </li>
                         </ul>
@@ -547,22 +555,23 @@
                             Java Backend Developer
                         </p>
                         <ul class="experience-list">
-                            <li>
+                            <li data-i18n="experience_list_2_1">
                                 Participación en el desarrollo de dos ofertas para banca PyME.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_2_2">
                                 Desarrollo backend en Java Legacy.
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_2_3">
                                 Despliegue exitoso de ambas iniciativas a producción.
                             </li>
                             <li>
-                                Soluciones que impactaron a más <div class="impact-badge">
+                                <span data-i18n="experience_list_2_4">Soluciones que impactaron a más </span>
+                                <div class="impact-badge">
                                     <i class="bi bi-people-fill"></i>
-                                    de 1 millon de clientes PyME
+                                    <span data-i18n="experience_list_2_badge">de 1 millon de clientes PyME</span>
                                 </div>
                             </li>
-                            <li>
+                            <li data-i18n="experience_list_2_5">
                                 Implementación de incrementos de línea de crédito y planes de pago fijos.
                             </li>
                         </ul>
@@ -574,10 +583,10 @@
         <footer id="contact" class="glass-footer">
 
             <div class="footer-content">
-                <h3>
+                <h3 data-i18n="thanks_for">
                     Gracias por visitar mi portfolio
                 </h3>
-                <p class="footer-description">
+                <p class="footer-description" data-i18n="are_you_interested">
                     ¿Te interesa colaborar o conocer más sobre mi experiencia?
                 </p>
                 <div class="footer-links">
@@ -595,7 +604,7 @@
                     © 2026 Luis Enrique Marcos
                 </p>
                 <p class="footer-tech">
-                    Built with
+                    <span data-i18n="built_with">Hecho con</span>
                     <i class="bi bi-filetype-html"></i>
                     HTML
                     •
@@ -607,7 +616,7 @@
                 </p>
                 <a href="https://github.com/LuisEMarc/portfolio" target="_blank">
                     <i class="bi bi-code-slash"></i>
-                    Ver código fuente
+                    <span data-i18n="see_the_code">Ver código fuente</span>
                 </a>
             </div>
         </footer>
@@ -620,7 +629,7 @@
             <div class="modal-content nav-modal">
                 <div class="nav-modal-header">
 
-                    <h2>
+                    <h2 data-i18n="navigation">
                         Navegación
                     </h2>
 
@@ -632,32 +641,32 @@
                 <div class="nav-modal-body">
                     <a href="#about" class="modal-nav-link">
                         <i class="bi bi-person-fill"></i>
-                        Sobre mí
+                        <span data-i18n="about_me">Sobre mí</span>
                     </a>
 
                     <a href="#education" class="modal-nav-link">
                         <i class="bi bi-mortarboard-fill"></i>
-                        Educación
+                        <span data-i18n="education">Educación</span>
                     </a>
 
                     <a href="#skills" class="modal-nav-link">
                         <i class="bi bi-stars"></i>
-                        Skills
+                        <span data-i18n="skills">Skills</span>
                     </a>
 
                     <a href="#projects" class="modal-nav-link">
                         <i class="bi bi-code-slash"></i>
-                        Proyectos
+                        <span data-i18n="projects">Proyectos</span>
                     </a>
 
                     <a href="#experience" class="modal-nav-link">
                         <i class="bi bi-briefcase-fill"></i>
-                        Experiencia
+                        <span data-i18n="professional_experience">Experiencia Profesional</span>
                     </a>
 
                     <a href="#contact" class="modal-nav-link">
                         <i class="bi bi-envelope-fill"></i>
-                        Contacto
+                        <span data-i18n="contact">Contacto</span>
                     </a>
                 </div>
             </div>
@@ -672,17 +681,17 @@
                 <div class="cv-modal-header">
                     <h2 class="glass-title">
                         <i class="bi bi-file-earmark-arrow-down-fill"></i>
-                        Descargar CV
+                        <span data-i18n="download_resume">Descargar CV</span>
                     </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal">
                     </button>
                 </div>
                 <div class="cv-modal-body">
                     <a href="assets/documents/cv/Luis_Marcos_ES.pdf" download class="cv-option">
-                        Español
+                        <span data-i18n="spanish">Español</span>
                     </a>
                     <a href="assets/documents/cv/Luis_Marcos_EN.pdf" download class="cv-option">
-                        English
+                        <span data-i18n="english">English</span>
                     </a>
                 </div>
             </div>
