@@ -628,6 +628,40 @@ body {
   color: var(--text);
 }
 
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .nav-toggle {
   width: 42px;
   height: 42px;
@@ -722,6 +756,80 @@ body {
 }
 
 /* ==========
+    CV 
+========== */
+
+.cv-modal-dialog {
+  max-width: 360px;
+}
+
+.cv-modal {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cv-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+}
+
+.cv-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.cv-option:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+.glass-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--title-color);
+  text-shadow: var(--title-glow);
+  font-weight: 700;
+  margin: 0;
+}
+
+.glass-title i {
+  color: inherit;
+  text-shadow: inherit;
+}
+
+/* ==========
+    LANGS 
+========== */
+
+#languageToggle .fi {
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+/* ==========
     MOBILE 
 ========== */
 
@@ -757,6 +865,10 @@ body {
   }
 
   .nav-link.hide-mobile {
+    display: none;
+  }
+
+  .nav-link::after {
     display: none;
   }
 
